@@ -1,8 +1,12 @@
 const container = document.querySelector('#innerContainer');
-const desiredGridWidth = 16;
+let desiredGridWidth = 100;
 
 function createGrid(num) {
-    container.innerHtml = '';
+    if (container.hasChildNodes()) {
+        while (container.hasChildNodes()) {
+            container.removeChild(container.firstChild);
+        }
+    };
 
     const squareWidth = `${100 / num}%`;
 
@@ -23,4 +27,14 @@ function createGrid(num) {
 
 createGrid(desiredGridWidth);
 
+const newGridBtn = document.querySelector('button');
+newGridBtn.addEventListener('click', () => {
+    desiredGridWidth = prompt('Enter a number from 16-100 to select width');
 
+    if (desiredGridWidth <= 100 && desiredGridWidth >= 16) {
+        createGrid(desiredGridWidth);
+    } else {
+        alert('Sorry, that size isn\'t allowed. Please try again.');
+    };
+    console.log(desiredGridWidth);
+});

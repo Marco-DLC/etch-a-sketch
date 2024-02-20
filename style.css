@@ -1,13 +1,35 @@
 body {
     display:flex;
+    flex-direction:column;
+    justify-content: center;
+    gap:1em;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+button {
+    background-color: aquamarine;
+    border-radius:5px;
+    border:outset lightskyblue 1px;
+    font-family:'Calibri', Helvetica, Arial, sans-serif;
+    font-weight:bold;
+    color:grey;
+    padding:12px 18px;
+    margin:auto;
+    flex:0;
+}
+#section {
+    display:flex;
+    justify-content:center;
 }
 
 #container {
     display:flex;
-    width:960px;
+    max-width:855px;
+    max-height:855px;
     border: 4px solid rgb(199, 10, 10);
     background-color:red;
     padding:10px;
+    flex:1;
 }
 
 #innerContainer{
