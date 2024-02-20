@@ -18,7 +18,11 @@ function createGrid(num) {
         square.style.paddingTop = squareWidth;
 
         square.addEventListener('mouseout', () => {
-            square.style.backgroundColor = 'rgb(44, 53, 43)';
+            if (rainbowColorBtn.classList.contains('selected')) {
+                square.style.backgroundColor = getRainbowColor();
+            } else {
+                square.style.backgroundColor = 'rgb(44, 53, 43)';
+            };
         });
 
         container.appendChild(square);
@@ -44,3 +48,24 @@ const resetGridBtn = document.querySelector('#resetGridBtn');
 resetGridBtn.addEventListener('click', () => {
     createGrid(desiredGridWidth);
 });
+
+const rainbowColorBtn = document.querySelector('#rainbowColorBtn');
+const normalColorBtn = document.querySelector('#normalColorBtn');
+
+rainbowColorBtn.addEventListener('click', () => {
+    normalColorBtn.classList.remove('selected');
+    rainbowColorBtn.classList.add('selected');
+});
+
+normalColorBtn.addEventListener('click', () => {
+    rainbowColorBtn.classList.remove('selected');
+    normalColorBtn.classList.add('selected');
+});
+
+function getRainbowColor() {
+    const red = Math.floor(Math.random() * 256);
+    const green = Math.floor(Math.random() * 256);
+    const blue = Math.floor(Math.random() * 256);
+
+    return `rgb(${red}, ${green}, ${blue})`;
+};

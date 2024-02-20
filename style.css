@@ -14,11 +14,32 @@ button {
     font-weight:bold;
     color:grey;
     padding:12px 18px;
-    margin:auto;
 }
 
 #btnsContainer {
     display:flex;
+    justify-content: space-evenly;
+    align-items:center;
+}
+
+#colorBtnsContainer {
+    display:flex;
+    flex-direction:column;
+}
+
+.colorBtn {
+    width:130px;
+    text-align:center;
+    font-size:10px;
+    padding:8px 12px;
+    background-color:darkcyan;
+    color:lightgrey;
+}
+
+.selected {
+    border:1px inset;
+    background-color:aquamarine;
+    color:gray;
 }
 
 #section {
