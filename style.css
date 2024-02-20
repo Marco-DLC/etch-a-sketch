@@ -15,8 +15,12 @@ button {
     color:grey;
     padding:12px 18px;
     margin:auto;
-    flex:0;
 }
+
+#btnsContainer {
+    display:flex;
+}
+
 #section {
     display:flex;
     justify-content:center;

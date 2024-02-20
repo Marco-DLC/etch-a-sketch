@@ -27,8 +27,9 @@ function createGrid(num) {
 
 createGrid(desiredGridWidth);
 
-const newGridBtn = document.querySelector('button');
-newGridBtn.addEventListener('click', () => {
+const gridSizeBtn = document.querySelector('#gridSizeBtn');
+
+gridSizeBtn.addEventListener('click', () => {
     desiredGridWidth = prompt('Enter a number from 16-100 to select width');
 
     if (desiredGridWidth <= 100 && desiredGridWidth >= 16) {
@@ -36,5 +37,10 @@ newGridBtn.addEventListener('click', () => {
     } else {
         alert('Sorry, that size isn\'t allowed. Please try again.');
     };
-    console.log(desiredGridWidth);
+});
+
+const resetGridBtn = document.querySelector('#resetGridBtn');
+
+resetGridBtn.addEventListener('click', () => {
+    createGrid(desiredGridWidth);
 });
